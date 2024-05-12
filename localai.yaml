@@ -1,31 +1,16 @@
-- name: phi-2
-  context_size: 2048
-  f16: true
-  threads: 11
-  gpu_layers: 90
-  mmap: true
-  parameters:
-    model: huggingface://TheBloke/phi-2-GGUF/phi-2.Q8_0.gguf
-    temperature: 0.2
-    top_k: 40
-    top_p: 0.95
-  template:
-    chat: &template |  
-      Instruct: {{.Input}}
-      Output: # Modifiez le modèle de prompt ici selon vos besoins
-    completion: *template
-- name: french-alpaca-llama3-8B-Q4-GGUF
-  parameters:
-    model: huggingface://jpacifico/french-alpaca-llama3-8B-Q4-GGUF/french-alpaca-llama3-4bits.gguf
-    temperature: 0.2
-    top_k: 40
-    top_p: 0.95
-  template:
-    chat: &template |  
-      Tu trouveras ci-dessous une instruction qui décrit une tâche. Rédige une réponse qui complète de manière appropriée la demande.
-      {{ if .System }}### Instruction:
-      {{ .System }}{{ end }}
-      {{ if .Prompt }}### Input:
-      {{ .Prompt }}{{ end }}
-      ### Response:
-    completion: *template
+name: phi-2
+context_size: 2048
+f16: true
+threads: 11
+gpu_layers: 90
+mmap: true
+parameters:
+  model: huggingface://TheBloke/phi-2-GGUF/phi-2.Q8_0.gguf
+  temperature: 0.2
+  top_k: 40
+  top_p: 0.95
+template:
+  chat: &template |  
+    Instruct: {{.Input}}
+    Output: # Modifiez le modèle de prompt ici selon vos besoins
+  completion: *template
