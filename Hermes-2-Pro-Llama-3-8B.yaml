@@ -1,4 +1,4 @@
-name: Hermes-2-Pro-Llama-3-8B
+name: Hermes-2-Pro-Llama-3-8B-GGUF
 parameters:
   model: huggingface://NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/Hermes-2-Pro-Llama-3-8B-F16.gguf
   temperature: 0.2
