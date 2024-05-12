@@ -1,0 +1,15 @@
+name: french-alpaca-llama3-8B-Q4-GGUF
+parameters:
+  model: huggingface://jpacifico/french-alpaca-llama3-8B-Q4-GGUF/french-alpaca-llama3-4bits.gguf
+  temperature: 0.2
+  top_k: 40
+  top_p: 0.95
+template:
+  chat: &template |  
+    Tu trouveras ci-dessous une instruction qui décrit une tâche. Rédige une réponse qui complète de manière appropriée la demande.
+    {{ if .System }}### Instruction:
+    {{ .System }}{{ end }}
+    {{ if .Prompt }}### Input:
+    {{ .Prompt }}{{ end }}
+    ### Response:
+  completion: *template
