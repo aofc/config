@@ -1,11 +1,11 @@
 name: Hermes-2-Pro-Llama-3-8B-GGUF
 parameters:
-  model: huggingface://NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/Hermes-2-Pro-Llama-3-8B-F16.gguf
+  model: huggingface://NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf
   temperature: 0.2
   top_k: 40
   top_p: 0.95
 template:
   chat: &template |  
     Instruct: {{.Input}}
-    Output: # Modifiez le modèle de prompt ici selon vos besoins
+    Output: {{.Output}}
   completion: *template
